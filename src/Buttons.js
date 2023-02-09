@@ -1,15 +1,11 @@
-const Buttons = ({ setResourceType }) => {
+const Buttons = ({ setResourceType,value }) => {
     return (
         <div className="buttons">
-            <button
-                onClick={(e) => setResourceType(e.target.textContent)}
-            >users</button>
-            <button
-                onClick={(e) => setResourceType(e.target.textContent)}
-            >posts</button>
-            <button
-                onClick={(e) => setResourceType(e.target.textContent)}
-            >comments</button>
+            {value.map(res => (
+                <button
+                    onClick={() => setResourceType(res)}
+                >{res}</button>
+            ))}
         </div>
     )
 }
